@@ -67,7 +67,7 @@
                                     <div class="gdlr-core-text-box-item-content"
                                          style="font-weight: 700; text-transform: none;">
                                         <p><a style="text-decoration: underline; color: #fff;"
-                                              href="#">+1-2345-2345</a></p>
+                                              href="#">+1754-307-6709</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,8 @@
                                 <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
                                     <div class="gdlr-core-text-box-item-content"
                                          style="font-weight: 700; text-transform: none;">
-                                        <p><a style="color: #fff;" class="__cf_email__">test@gmail.com</a></p>
+                                        <p><a style="color: #fff;" class="__cf_email__">info@barterhub.ltd</a></p>
+                                        <p><a style="color: #fff;" class="__cf_email__">support@barterhub.ltd</a></p>
                                     </div>
                                 </div>
                             </div>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 10, 2021 at 08:55 PM
--- Server version: 5.7.31
--- PHP Version: 7.4.9
+-- Generation Time: Jan 30, 2022 at 08:17 AM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `investment_packages` (
   `option2` varchar(190) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `option3` varchar(190) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci,
-  `roi` varchar(190) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `roi` int(10) DEFAULT NULL,
   `compound_roi` varchar(190) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -154,9 +154,9 @@ CREATE TABLE IF NOT EXISTS `investment_packages` (
 --
 
 INSERT INTO `investment_packages` (`id`, `name`, `min`, `max`, `referral_bonus`, `monthly_profit`, `days_turnover`, `expert_advice`, `deposit_bonus`, `option1`, `option2`, `option3`, `description`, `roi`, `compound_roi`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Basic', 50, 499, NULL, NULL, 24, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Build an emergency fund so you can weather any storm. We recommend this for every client, because life happens.', '10% after 24 hours', NULL, 1, NULL, NULL),
-(2, 'Silver', 500, 4999, NULL, NULL, 48, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Helps investors lower risk; whether you’re saving for a purchase, short-term goal or a payment plan. This plan will help you achieve it Faster', '20% after 48 hours ', NULL, 1, NULL, NULL),
-(3, 'Gold', 2000, NULL, NULL, NULL, 72, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Start on the path of financial freedom. It may seem far away, but starting sooner makes it easier to get the retirement lifestyle you want.\r\n            (You can make daily/weekly/Monthly deposits till you get to the minimum investment)\r\n            ', '50% after 72 hours', NULL, 1, NULL, NULL);
+(1, 'Basic', 50, 499, NULL, NULL, 24, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Build an emergency fund so you can weather any storm. We recommend this for every client, because life happens.', 10, NULL, 1, NULL, NULL),
+(2, 'Silver', 500, 4999, NULL, NULL, 48, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Helps investors lower risk; whether you’re saving for a purchase, short-term goal or a payment plan. This plan will help you achieve it Faster', 20, NULL, 1, NULL, NULL),
+(3, 'Gold', 2000, NULL, NULL, NULL, 72, '24/7 Support: YES', NULL, NULL, 'Money Back guaranteed', 'Instant Automatic Withdrawal', 'Start on the path of financial freedom. It may seem far away, but starting sooner makes it easier to get the retirement lifestyle you want.\r\n            (You can make daily/weekly/Monthly deposits till you get to the minimum investment)\r\n            ', 50, NULL, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -219,7 +219,15 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `user_id`, `debit`, `credit`, `description`, `created_at`, `updated_at`) VALUES
+(28, 25, 0, 78, NULL, '2022-01-07 10:36:02', '2022-01-07 10:36:02'),
+(27, 25, 0, 66, NULL, '2022-01-07 10:35:48', '2022-01-07 10:35:48');
 
 -- --------------------------------------------------------
 
@@ -248,14 +256,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `referral_number`, `email_verified_at`, `password`, `password_backup`, `image`, `valid_id`, `mobile`, `country`, `state`, `address`, `is_active`, `remember_token`, `created_at`, `updated_at`) VALUES
-(24, 'Dexter Dexter', 'neutrondeveloper@gmail.com', 'CGL57838426', NULL, '$2y$10$b0w.CRWmHtL4fFPk2iZ6oOrc1uIjBDLtXpUMSPn/6rwexHz/f60fS', '11111111', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', NULL, 'Algeria', 'Ain Temouchent', NULL, 1, NULL, '2021-11-21 13:50:11', '2021-11-21 13:50:11');
+(24, 'Dexter Dexter', 'neutrondeveloper@gmail.com', 'CGL57838426', NULL, '$2y$10$b0w.CRWmHtL4fFPk2iZ6oOrc1uIjBDLtXpUMSPn/6rwexHz/f60fS', '11111111', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', '1637506211tierra-mallorca-NpTbVOkkom8-unsplash.jpg', NULL, 'Algeria', 'Ain Temouchent', NULL, 1, NULL, '2021-11-21 13:50:11', '2021-11-21 13:50:11'),
+(25, 'Dexter Dexter', 'embachu@nourishingafrica.com', 'CGL99771104', NULL, '$2y$10$MkUmbnXg9af/Yqb6x08wuOquvMlJktYV/b74qxcfhVBxuz5U1igpe', '11111111', '1639226288attachment_37225515.jpg', NULL, '1111111111', 'Argentina', 'Formosa', NULL, 0, NULL, '2021-12-11 11:38:08', '2021-12-11 11:38:08');
 
 -- --------------------------------------------------------
 
@@ -290,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `user_wallet_addresses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user_wallet_addresses`
@@ -298,8 +307,7 @@ CREATE TABLE IF NOT EXISTS `user_wallet_addresses` (
 
 INSERT INTO `user_wallet_addresses` (`id`, `user_id`, `name`, `address`, `barcode`, `created_at`, `updated_at`) VALUES
 (12, NULL, 'Bitcoin', '1GE29MxR6gVUAJ5u167wWtryQMcJebLNo1', 0x31363337363037313534494d475f353130352e68656966, '2021-11-22 17:52:34', '2021-11-22 17:52:34'),
-(13, NULL, 'Bitcoin 2', '1GE29MxR6gVUAJ5u167wWtryQMcJebLNo1', 0x313633373630373438366c6f676f322e706e67, '2021-11-22 17:58:06', '2021-11-22 17:58:06'),
-(14, NULL, 'Bitcoin 2', '13rWB8DnHgoPQJ8r79gnMaDkFDG9FSNVVd', 0x313633373630373836397469657272612d6d616c6c6f7263612d4e705462564f6b6b6f6d382d756e73706c6173682e6a7067, '2021-11-22 18:04:30', '2021-11-22 18:04:30');
+(13, NULL, 'Bitcoin 2', '1GE29MxR6gVUAJ5u167wWtryQMcJebLNo1', 0x313633373630373438366c6f676f322e706e67, '2021-11-22 17:58:06', '2021-11-22 17:58:06');
 
 -- --------------------------------------------------------
 
@@ -318,13 +326,14 @@ CREATE TABLE IF NOT EXISTS `wallets` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `wallets`
 --
 
 INSERT INTO `wallets` (`id`, `user_id`, `amount`, `profit`, `commission`, `bonus`, `created_at`, `updated_at`) VALUES
+(14, 25, 78, 4444, 0, 44, '2021-12-11 11:38:08', '2022-01-30 07:00:09'),
 (13, 24, 0, 0, 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
