@@ -28,6 +28,21 @@
     <link rel="stylesheet" href="{{ asset('main/js/plugins/revslider/public/assets/fonts/font-awesome/css/font-awesome.css') }}" type="text/css" media="all" />
 
     @yield('top-assets')
+
+<!-- Start of Async Callbell Code -->
+    <script>
+        window.callbellSettings = {
+            token: "z1LSFwLGWxBR6ABsixKkddg5"
+        };
+    </script>
+    <script>
+        (function(){var w=window;var ic=w.callbell;if(typeof ic==="function"){ic('reattach_activator');ic('update',callbellSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Callbell=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://dash.callbell.eu/include/'+window.callbellSettings.token+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+    </script>
+    <!-- End of Async Callbell Code -->
+
+
+
+
 </head>
 
 <body class="home page-template-default page page-id-12613 theme-corzo gdlr-core-body woocommerce-no-js corzo-body corzo-body-front corzo-full corzo-with-sticky-navigation corzo-blockquote-style-3 gdlr-core-link-to-lightbox"
@@ -103,7 +118,7 @@
                         <div class="corzo-top-bar-right corzo-item-pdlr">
                             <div class="corzo-top-bar-right-text">
                                 <i class="fa5s fa5-envelope-open" style="font-size: 19px; color: #d32525; margin-left: 20px; margin-right: 10px;"></i>
-                                <a href="#" class="__cf_email__">info@barterhub.ltd</a>
+                                <a href="#" class="__cf_email__">info@barterhub.ltd, admin@barterhub.ltd</a>
                             </div>
                             <div class="corzo-top-bar-right-social">
                                 <a href="#" target="_blank" class="corzo-top-bar-social-icon" title="facebook"><i class="fa fa-facebook"></i></a>
@@ -216,7 +231,7 @@
                                 <p>
                                     <span style="font-size: 18px; color: #999999; font-weight: 400;">Email</span><br />
                                     <span style="font-size: 18px; color: #ffffff; font-weight: 600;">
-                                                <a href="#" class="__cf_email__">info@barterhub.ltd</a>
+                                                <a href="#" class="__cf_email__">info@barterhub.ltd, admin@barterhub.ltd</a>
                                             </span>
                                     <br />
                                     <span class="gdlr-core-space-shortcode" style="margin-top: -10px;"></span><br />
@@ -228,7 +243,7 @@
                     </div>
                     <div class="corzo-footer-column corzo-item-pdlr corzo-column-15">
                         <div id="text-8" class="widget widget_text corzo-widget">
-                            <h1 class="corzo-widget-title corzo-with-divider">London</h1>
+                            <h1 class="corzo-widget-title corzo-with-divider">New York</h1>
                             <span class="clear"></span>
                             <div class="textwidget">
                                 <p>
@@ -318,7 +333,7 @@
         window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
         window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
         try {
-            var pw = document.getElementById(e.c).parentNode.offsetWidth,
+            let pw = document.getElementById(e.c).parentNode.offsetWidth,
                 newh;
             pw = pw === 0 || isNaN(pw) ? window.RSIW : pw;
             e.tabw = e.tabw === undefined ? 0 : parseInt(e.tabw);

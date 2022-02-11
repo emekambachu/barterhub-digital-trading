@@ -109,6 +109,7 @@
                                          style="font-weight: 700; text-transform: none;">
                                         <p><a style="color: #fff;" class="__cf_email__">info@barterhub.ltd</a></p>
                                         <p><a style="color: #fff;" class="__cf_email__">support@barterhub.ltd</a></p>
+                                        <p><a style="color: #fff;" class="__cf_email__">admin@barterhub.ltd</a></p>
                                     </div>
                                 </div>
                             </div>

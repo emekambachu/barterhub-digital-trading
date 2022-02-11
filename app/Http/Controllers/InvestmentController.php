@@ -107,9 +107,9 @@ class InvestmentController extends Controller
 
         // Send Email to registered User
         Mail::send('emails.investments.add-new-investment', $data, static function ($message) use ($data) {
-            $message->from('info@cryptcoininvestment.com', 'Cryptcoin Investment and Tradings');
+            $message->from('info@barterhub.ltd', 'Barterhub Crypto Trading');
             $message->to($data['email'], $data['name'])->cc('support@barterhub.ltd');
-            $message->replyTo('support@barterhub.ltd', 'Cryptcoin Investment and Tradings');
+            $message->replyTo('support@barterhub.ltd', 'Barterhub Crypto Trading');
             $message->subject('Your investment has been submitted');
         });
 

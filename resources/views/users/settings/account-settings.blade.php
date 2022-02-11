@@ -83,7 +83,7 @@
         <div class="footer-wrapper">
             <div class="footer-section f-section-1">
                 <p class="center-block">Copyright © {{ date('Y') }}
-                    <a target="_blank" href="{{ url('/') }}">Cryptcoin Investment and Tradings</a>, All rights reserved.</p>
+                    <a target="_blank" href="{{ url('/') }}">Barterhub Crypto Trading</a>, All rights reserved.</p>
             </div>
         </div>
 
