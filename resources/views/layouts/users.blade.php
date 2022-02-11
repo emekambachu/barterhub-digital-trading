@@ -110,6 +110,7 @@
                         <img src="/photos/{{!empty(Auth::user()->image) ? Auth::user()->image : 'noimage.png'}}" class="img-fluid">
                         <div class="media-body align-self-center">
                             <h6 class="text-white"><span>Hi,</span> {{ Auth::user()->name }}</h6>
+                            <h6 class="text-white">Ref: {{ Auth::user()->referral_number }}</h6>
                         </div>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>

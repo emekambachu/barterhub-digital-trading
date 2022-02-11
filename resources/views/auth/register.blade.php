@@ -87,14 +87,14 @@
                                             </span>
                                             @enderror
 
-                                            <label>Valid ID</label>
-                                            <input class="input @error('valid_id') is-invalid @enderror"
-                                                   type="file" name="valid_id">
-                                            @error('valid_id')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+{{--                                            <label>Valid ID</label>--}}
+{{--                                            <input class="input @error('valid_id') is-invalid @enderror"--}}
+{{--                                                   type="file" name="valid_id">--}}
+{{--                                            @error('valid_id')--}}
+{{--                                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                <strong>{{ $message }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                            @enderror--}}
 
                                             <label>Password</label>
                                             <input class="input @error('password') is-invalid @enderror"
@@ -109,47 +109,47 @@
                                             <input class="input" type="password" name="password_confirmation"
                                                    autocomplete="new-password" placeholder="Confirm Password" required>
 
-                                            <label>Primary crypto wallet</label>
-                                            <input class="input @error('wallet_address[0][address]') is-invalid @enderror"
-                                                   type="text" name="wallet_address[0][address]"
-                                                   value="{{ old('wallet_address[0][address]') }}"
-                                                   placeholder="Primary Crypto Wallet Name">
-                                            @error('wallet_address[0][address]')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+{{--                                            <label>Primary crypto wallet</label>--}}
+{{--                                            <input class="input @error('wallet_address[0][address]') is-invalid @enderror"--}}
+{{--                                                   type="text" name="wallet_address[0][address]"--}}
+{{--                                                   value="{{ old('wallet_address[0][address]') }}"--}}
+{{--                                                   placeholder="Primary Crypto Wallet Name">--}}
+{{--                                            @error('wallet_address[0][address]')--}}
+{{--                                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                <strong>{{ $message }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                            @enderror--}}
 
-                                            <input class="input @error('wallet_address[0][address]') is-invalid @enderror"
-                                                   type="text" name="wallet_address[0][address]"
-                                                   value="{{ old('wallet_address[0][address]') }}"
-                                                   placeholder="Primary Crypto Wallet Address">
-                                            @error('wallet_address[0][address]')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+{{--                                            <input class="input @error('wallet_address[0][address]') is-invalid @enderror"--}}
+{{--                                                   type="text" name="wallet_address[0][address]"--}}
+{{--                                                   value="{{ old('wallet_address[0][address]') }}"--}}
+{{--                                                   placeholder="Primary Crypto Wallet Address">--}}
+{{--                                            @error('wallet_address[0][address]')--}}
+{{--                                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                <strong>{{ $message }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                            @enderror--}}
 
-                                            <label>Secondary crypto wallet</label>
-                                            <input class="input @error('wallet_address[1][name]') is-invalid @enderror"
-                                                   type="text" name="wallet_address[1][name]"
-                                                   value="{{ old('wallet_address[1][name]') }}"
-                                                   placeholder="Secondary Crypto Wallet Name">
-                                            @error('wallet_address[1][name]')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+{{--                                            <label>Secondary crypto wallet</label>--}}
+{{--                                            <input class="input @error('wallet_address[1][name]') is-invalid @enderror"--}}
+{{--                                                   type="text" name="wallet_address[1][name]"--}}
+{{--                                                   value="{{ old('wallet_address[1][name]') }}"--}}
+{{--                                                   placeholder="Secondary Crypto Wallet Name">--}}
+{{--                                            @error('wallet_address[1][name]')--}}
+{{--                                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                <strong>{{ $message }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                            @enderror--}}
 
-                                            <input class="input @error('wallet_address[1][address]') is-invalid @enderror"
-                                                   type="text" name="wallet_address[1][address]"
-                                                   value="{{ old('wallet_address[1][address]') }}"
-                                                   placeholder="Secondary Crypto Wallet Address">
-                                            @error('wallet_address[1][address]')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+{{--                                            <input class="input @error('wallet_address[1][address]') is-invalid @enderror"--}}
+{{--                                                   type="text" name="wallet_address[1][address]"--}}
+{{--                                                   value="{{ old('wallet_address[1][address]') }}"--}}
+{{--                                                   placeholder="Secondary Crypto Wallet Address">--}}
+{{--                                            @error('wallet_address[1][address]')--}}
+{{--                                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                <strong>{{ $message }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                            @enderror--}}
 
                                             <label>Country</label>
                                             <select class="input" id="country" name="country" required></select>

@@ -68,11 +68,10 @@
                             <div class="card-body">
                                 <p class="card-text">{{ $address->name }}</p>
                                 <h5 class="card-title">{{ $address->address }}</h5>
+                                @if($address->image !== null)
+                                    <img width="200" src="{{ asset("photos/{$address->image}") }}">
+                                @endif
                             </div>
-                            @if($address->image !== null)
-                            <img width="200" src="{{ asset("photos/{$address->image}") }}"
-                                 class="card-img-top" alt="widget-card-2">
-                            @endif
                         </div>
                         @endforeach
 
